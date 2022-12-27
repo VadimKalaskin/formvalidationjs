@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/be8f711ffe.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Валидация формы JS</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="feedback__row">
+        <div class="feedback__column">
+          <div class="feedback__item">
+            <i class="fa-solid fa-location-dot"></i>
+            <p class="item__title">Адрес</p>
+            <p class="item__description">г. Москва, Рублёвское ш., д. 19</p>
+          </div>
+          <div class="feedback__item">
+            <i class="fa-solid fa-phone"></i>
+            <p class="item__title">Телефон</p>
+            <p class="item__description">8-800-000-00-00</p>
+          </div>
+          <div class="feedback__item">
+            <i class="fa-solid fa-envelope"></i>
+            <p class="item__title">E-mail</p>
+            <p class="item__description">support@site.ru</p>
+          </div>
+        </div>
+        <div class="feedback__column">
+          <div class="form__info">
+            <h2 class="form__title">Отправьте нам сообщение</h2>
+            <p class="form__subtitle">
+              Если у Вас есть вопросы или предложения по сотрудничеству -
+              заполните форму ниже
+            </p>
+          </div>
+          <form action="#" method="post" id="form" name="form">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Ваше имя"
+              required
+              is-valid="0"
+              data-reg="^[А-ЯЁ][а-яё]*$"
+            />
+            <label for="name">Только русские буквы</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Ваш email"
+              required
+              is-valid="0"
+              data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
+            />
+            <label for="email">В формате: yourname@email.com</label>
+            <input
+              type="tel"
+              name="tel"
+              id="tel"
+              placeholder="Номер телефона"
+              required
+              data-reg="^((\+7|7|8)+([0-9]){10})$"
+              is-valid="0"
+            />
+            <label for="tel"
+              >В формате: +79500000000, 79500000000 или 89500000000
+            </label>
+            <textarea
+              form="form"
+              name="msg"
+              id="msg"
+              cols="1"
+              rows="10"
+              placeholder="Сообщение"
+            ></textarea>
+            <button type="submit" id="submit" name="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
